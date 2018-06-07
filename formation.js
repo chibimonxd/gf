@@ -2711,9 +2711,11 @@ function updateAttrBeforAction(charObj) {
     charObj.cb.attr.criRate = charObj.cb.attr.criRate;
     charObj.cb.attr.armor = Math.floor(charObj.cb.attr.armor);
 
-    if (charObj.type == "rf" || charObj.type == "ar") charObj.cb.attr.fireOfRate = Math.min(charObj.cb.attr.fireOfRate, 120);
+    if (charObj.name == "AUG") charObj.cb.attr.fireOfRate = Math.min(charObj.cb.attr.fireOfRate, 150);
+    else if (charObj.type == "rf" || charObj.type == "ar") charObj.cb.attr.fireOfRate = Math.min(charObj.cb.attr.fireOfRate, 120);
     else if (charObj.type == "sg") charObj.cb.attr.fireOfRate = Math.min(charObj.cb.attr.fireOfRate, 60);
     else if (charObj.type != "mg") charObj.cb.attr.fireOfRate = Math.min(charObj.cb.attr.fireOfRate, 120);
+	
     charObj.cb.attr.criRate = Math.min(charObj.cb.attr.criRate, 100);
 
     if (battleisNight) {
